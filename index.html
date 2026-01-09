@@ -4,11 +4,32 @@
   <meta charset="UTF-8" />
   <title>📚 나만의 작품 기록장</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="나만의 작품 기록장">
+  <meta property="og:description" content="독후감, 감상, 하이라이트까지 기록하는 나만의 디지털 서재">
+  <meta property="og:image" content="ChatGPT Image 2026년 1월 9일 오후 05_55_35.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dcvhdsv5b4-coder.github.io/books/">
+
+  <!-- 앱 아이콘 및 PWA 설정 -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="ChatGPT Image 2026년 1월 9일 오후 05_55_33.png" type="image/png">
+  <link rel="apple-touch-icon" href="ChatGPT Image 2026년 1월 9일 오후 05_55_33.png">
 
   <!-- 예쁜 글씨체들 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Gowun+Batang&family=Nanum+Gothic&family=Pacifico&family=Lobster&family=Indie+Flower&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(
+          reg => console.log('Service Worker registered ✅', reg),
+          err => console.error('Service Worker failed ❌', err)
+        );
+      });
+    }
+  </script>
   <style>
     @font-face {
       font-family: 'Griun';
@@ -17,25 +38,8 @@
   </style>
 </head>
 <body class="light">
-  <!-- 설정창 -->
   <div class="settings">
-    <label>🌗 테마
-      <select id="themeToggle">
-        <option value="light">라이트</option>
-        <option value="dark">다크</option>
-      </select>
-    </label>
-    <label>🖋️ 글씨체
-      <select id="fontSelect">
-        <option value="Noto Sans KR">Noto Sans KR</option>
-        <option value="Gowun Batang">고운바탕</option>
-        <option value="Nanum Gothic">나눔고딕</option>
-        <option value="Pacifico">Pacifico</option>
-        <option value="Lobster">Lobster</option>
-        <option value="Indie Flower">Indie Flower</option>
-        <option value="Griun">Griun_Shakshakshak</option>
-      </select>
-    </label>
+    <!-- 테마, 글씨체 설정 등 UI 요소들 -->
   </div>
 
   <div class="container">

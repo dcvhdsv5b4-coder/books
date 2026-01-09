@@ -1,0 +1,20 @@
+{
+  "name": "나만의 작품 기록장",
+  "short_name": "작품기록장",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "ChatGPT Image 2026년 1월 9일 오후 05_55_33.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "ChatGPT Image 2026년 1월 9일 오후 05_55_33.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
