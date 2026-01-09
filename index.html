@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>📚 나만의 작품 기록장</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 예쁜 글씨체들 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Gowun+Batang&family=Nanum+Gothic&family=Pacifico&family=Lobster&family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'Griun';
+      src: url('images/Griun_Shakshakshak-Rg.ttf') format('truetype');
+    }
+  </style>
+</head>
+<body class="light">
+  <!-- 설정창 -->
+  <div class="settings">
+    <label>🌗 테마
+      <select id="themeToggle">
+        <option value="light">라이트</option>
+        <option value="dark">다크</option>
+      </select>
+    </label>
+    <label>🖋️ 글씨체
+      <select id="fontSelect">
+        <option value="Noto Sans KR">Noto Sans KR</option>
+        <option value="Gowun Batang">고운바탕</option>
+        <option value="Nanum Gothic">나눔고딕</option>
+        <option value="Pacifico">Pacifico</option>
+        <option value="Lobster">Lobster</option>
+        <option value="Indie Flower">Indie Flower</option>
+        <option value="Griun">Griun_Shakshakshak</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="container">
+    <form id="bookForm">
+      <h2>🎬 작품 정보 입력</h2>
+      <input id="title" placeholder="작품 제목" required>
+      <input id="author" placeholder="작가" required>
+
+      <textarea id="reason" class="input-text" placeholder="작품 선정 이유"></textarea>
+      <div class="highlight-tools">
+        <button type="button" onclick="applyHighlight('reason')">🟨 강조</button>
+      </div>
+
+      <textarea id="review" class="input-text full-width" placeholder="독후감"></textarea>
+      <div class="highlight-tools">
+        <button type="button" onclick="applyHighlight('review')">🟨 강조</button>
+      </div>
+
+      <textarea id="quote" class="input-text" placeholder="기억하고 싶은 문장"></textarea>
+      <div class="highlight-tools">
+        <button type="button" onclick="applyHighlight('quote')">🟨 강조</button>
+      </div>
+
+      <input type="date" id="readDate">
+
+      <label>📘 읽은 횟수:
+        <div class="repeats">
+          <input type="checkbox" id="repeat1">
+          <input type="checkbox" id="repeat2">
+          <input type="checkbox" id="repeat3">
+          <input type="checkbox" id="repeat4">
+        </div>
+      </label>
+
+      <label>유형 (복수 선택)
+        <select id="typeSelect" multiple>
+          <option>인문학</option><option>소설</option><option>에세이</option><option>만화</option>
+          <option>전공</option><option>영화</option><option>드라마</option><option>시나리오</option>
+          <option>교과서</option><option>신문</option><option>기사</option><option>웹소설</option>
+        </select>
+      </label>
+
+      <label>장르 (복수 선택)
+        <select id="genreSelect" multiple>
+          <option>SF</option><option>로맨스</option><option>무협</option><option>스포츠</option>
+          <option>라이트 노벨</option><option>추리/미스터리</option><option>영웅</option>
+          <option>호러/공포</option><option>고전</option><option>신화</option>
+        </select>
+      </label>
+
+      <button type="submit">저장</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
